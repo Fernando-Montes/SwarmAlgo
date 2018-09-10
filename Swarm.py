@@ -39,13 +39,13 @@ def bestBees():
     for bee in range(0, numBees):   # Loop over all bees 
         tmp1 = reader[ reader[:,0]==bee ]
         tmp2 = tmp1[ np.argmax(tmp1[:,8]), [1,2,3,4,5,6,7]] 
-        tmp3 = [bee, np.max[tmp1[:,8]]]
+        tmp3 = [bee, np.max(tmp1[:,8])]
         if bee==0:
             xpbest = tmp2
             resbbest = tmp3        
         else:	 
             xpbest = np.vstack((xpbest, tmp2))
-            resbbest = np.vstack( resbbest, tmp3 )  
+            resbbest = np.vstack((resbbest, tmp3))  
     return np.asmatrix(xpbest), np.asmatrix(xgbest), resbbest
 
 # Returns update position and velocity based on global and personal bees' best
